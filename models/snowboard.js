@@ -18,7 +18,7 @@ const SnowboardSchema = new Schema(
 SnowboardSchema
 .virtual('url')
 .get(function() { // I use a anonymous function rather than an arrow function bc 'this' in the next line will not assign properly w/ arrows
-    return '/snowboard/' + this._id
+    return './snowboards/' + this._id
 })
 
 module.exports = mongoose.model('Snowboard', SnowboardSchema)

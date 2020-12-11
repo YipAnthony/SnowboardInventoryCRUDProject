@@ -242,13 +242,7 @@ function createSnowboards(cb) {
             snowboardCreate(
                 brands[13], 'Hybrid', 'Directional', '2x4', 'Solution Splitboard', 'https://www.jonessnowboards.com/splitboarding/522-3403-solution-splitboard.html', '899.95', callback
             );
-        },
-        function(callback) {
-            snowboardCreate(
-                brands[13], 'Hybrid', 'Directional', '2x4', 'Solution Splitboard', 'https://www.jonessnowboards.com/splitboarding/522-3403-solution-splitboard.html', '899.95', callback
-            );
-        },
-        
+        }        
         ],
         // optional callback
         cb);
@@ -326,10 +320,7 @@ function createSnowboardItems(cb) {
             snowboardItemCreate(snowboards[4], 154, callback)
         }, 
         function(callback) {
-            snowboardItemCreate(snowboards[5], 154, callback)
-        }, 
-        function(callback) {
-            snowboardItemCreate(snowboards[7], 154, callback)
+            snowboardItemCreate(snowboards[6], 154, callback)
         }, 
     ], cb)
 }
