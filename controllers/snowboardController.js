@@ -1,11 +1,10 @@
 const Snowboard = require('../models/snowboard')
 const Brand = require('../models/brand')
+const snowboardItem = require('../models/snowboardItem')
 
 const async = require('async')
 const { response } = require('express')
 const { body, validationResult } = require('express-validator')
-const snowboardItem = require('../models/snowboardItem')
-const snowboard = require('../models/snowboard')
 
 
 // CREATE
@@ -44,7 +43,7 @@ const snowboard = require('../models/snowboard')
                 if (err) return next(err)
 
                 // Has boards in stock
-                if (results.snowboardItem.length > 0) {
+                if (results.snowboardItem.length >= 0) {
                     res.render('snowboard_item', {title: 'Product details', snowboard: results.snowboard, snowboardItem: results.snowboardItem})
                 }
             }

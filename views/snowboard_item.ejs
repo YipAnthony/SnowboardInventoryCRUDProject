@@ -14,5 +14,27 @@
     <p><strong>Shape: </strong><%= snowboard.shape %></p>
     <p><strong>Mounting system: </strong><%= snowboard.mount %></p>
     <p><strong> <a href="<%= snowboard.externalLink %>" target="_blank">Product Link</a></strong></p>
+    <p><strong>Available Sizes: </strong> 
+        <% const snowboardOrganizer = {} %> 
+        <ul>
+            <% if ( snowboardItem.length === 0 ) { %>
+                <li style="color: red;"><%=  "Out of stock" %> </li>
+            <% } else {%> 
+                    <% snowboardItem.forEach(item => { %>
+                        <% if (snowboardOrganizer[item.length]) { %>
+                        <%  snowboardOrganizer[item.length] += 1 %>
+                        <% } else { %> 
+                            <% snowboardOrganizer[item.length] = 1%>
+                        <% } %>
+                    <% }) %>
+                    <% for (const length in snowboardOrganizer) { %>
+                            <li><%= length + " (" + snowboardOrganizer[length] + " in stock)" %> </li>
+                        <% } %> 
+            <% } %> 
+        </ul>
+    </p>
+    <hr>
+    <a href="/snowboards">Back to snowboards</a>
+    <a href="/">Home</a>
 </body>
 </html>
